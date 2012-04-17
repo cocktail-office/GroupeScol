@@ -1,0 +1,106 @@
+{
+    attributes = (
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "GGRP_KEY"; 
+            externalType = NUMBER; 
+            name = ggrpKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "GOBJ_KEY"; 
+            externalType = NUMBER; 
+            name = gobjKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "GOBJ_TYPE"; 
+            externalType = VARCHAR2; 
+            name = gobjType; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 3; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MAP_KEY"; 
+            externalType = NUMBER; 
+            name = mapKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MSEM_KEY"; 
+            externalType = NUMBER; 
+            name = msemKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (gobjKey, ggrpKey, gobjType, msemKey, mapKey, fannKey); 
+    className = "org.cocktail.groupescol.serveur.eof.ScolGroupeObjet"; 
+    classProperties = (
+        gobjType, 
+        scolFormationAnnee, 
+        scolGroupeGrp, 
+        scolMaquetteAp, 
+        scolMaquetteSemestre
+    ); 
+    externalName = "SCOL_GROUPE_OBJET"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            gobjType, 
+            scolFormationAnnee, 
+            scolGroupeGrp, 
+            scolMaquetteAp, 
+            scolMaquetteSemestre
+        ); 
+        "_javaClientClassName" = "org.cocktail.groupescol.client.eof.ScolGroupeObjet"; 
+    }; 
+    name = ScolGroupeObjet; 
+    primaryKeyAttributes = (gobjKey); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = ScolFormationAnnee; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fannKey; sourceAttribute = fannKey; }); 
+            name = scolFormationAnnee; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = ScolGroupeGrp; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = ggrpKey; sourceAttribute = ggrpKey; }); 
+            name = scolGroupeGrp; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = ScolMaquetteAp; 
+            isToMany = N; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = mapKey; sourceAttribute = mapKey; }); 
+            name = scolMaquetteAp; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = ScolMaquetteSemestre; 
+            isToMany = N; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = msemKey; sourceAttribute = msemKey; }); 
+            name = scolMaquetteSemestre; 
+        }
+    ); 
+}

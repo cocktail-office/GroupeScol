@@ -1,0 +1,18 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {fermer = id; }; 
+            CLASS = "org.cocktail.groupescol.client.GroupesApController"; 
+            LANGUAGE = Java; 
+            OUTLETS = {
+                eodGroupeGrp = id; 
+                eodInscriptionGrp = id; 
+                tableGroupeGrp = id; 
+                tableInscriptionGrp = id; 
+            }; 
+            SUPERCLASS = "com.webobjects.eoapplication.EOInterfaceController"; 
+        }
+    ); 
+    IBVersion = 1; 
+}

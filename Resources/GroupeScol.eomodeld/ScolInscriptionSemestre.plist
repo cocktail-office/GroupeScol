@@ -1,0 +1,99 @@
+{
+    attributes = (
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "IDIPL_NUMERO"; 
+            externalType = NUMBER; 
+            name = idiplNumero; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "MRSEM_KEY"; 
+            externalType = NUMBER; 
+            name = mrsemKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }
+    ); 
+    attributesUsedForLocking = (idiplNumero, mrsemKey, fannKey); 
+    className = "org.cocktail.groupescol.serveur.eof.ScolInscriptionSemestre"; 
+    classProperties = (
+        scolFormationAnnee, 
+        scolInscriptionAps, 
+        scolInscriptionEtudiant, 
+        scolInscriptionGrps, 
+        scolMaquetteRepartitionSem
+    ); 
+    externalName = "SCOL_INSCRIPTION_SEMESTRE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            scolFormationAnnee, 
+            scolInscriptionAps, 
+            scolInscriptionEtudiant, 
+            scolInscriptionGrps, 
+            scolMaquetteRepartitionSem
+        ); 
+        "_javaClientClassName" = "org.cocktail.groupescol.client.eof.ScolInscriptionSemestre"; 
+    }; 
+    name = ScolInscriptionSemestre; 
+    primaryKeyAttributes = (mrsemKey, idiplNumero); 
+    relationships = (
+        {
+            destination = ScolFormationAnnee; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fannKey; sourceAttribute = fannKey; }); 
+            name = scolFormationAnnee; 
+        }, 
+        {
+            destination = ScolInscriptionAp; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = (
+                {destinationAttribute = fannKey; sourceAttribute = fannKey; }, 
+                {destinationAttribute = idiplNumero; sourceAttribute = idiplNumero; }
+            ); 
+            name = scolInscriptionAps; 
+        }, 
+        {
+            destination = ScolInscriptionEtudiant; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = (
+                {destinationAttribute = fannKey; sourceAttribute = fannKey; }, 
+                {destinationAttribute = idiplNumero; sourceAttribute = idiplNumero; }
+            ); 
+            name = scolInscriptionEtudiant; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = ScolInscriptionGrp; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = (
+                {destinationAttribute = fannKey; sourceAttribute = fannKey; }, 
+                {destinationAttribute = idiplNumero; sourceAttribute = idiplNumero; }
+            ); 
+            name = scolInscriptionGrps; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
+            destination = ScolMaquetteRepartitionSem; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mrsemKey; sourceAttribute = mrsemKey; }); 
+            name = scolMaquetteRepartitionSem; 
+        }
+    ); 
+}

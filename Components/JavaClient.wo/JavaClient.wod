@@ -1,0 +1,7 @@
+JavaClientComponent: WOJavaClientComponent {
+    applicationClassName = "org.cocktail.groupescol.client.MainClient";
+    applicationName = "GroupeScol";
+    needsAllPermissions = true;
+    downloadClientClasses = "customBundlesClientClasses";
+    vendor = "Universite de La Rochelle";
+}

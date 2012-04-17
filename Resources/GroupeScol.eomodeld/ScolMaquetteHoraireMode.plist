@@ -1,0 +1,78 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "MHMO_ABREVIATION"; 
+            externalType = VARCHAR2; 
+            name = mhmoAbreviation; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            columnName = "MHMO_CODE"; 
+            externalType = VARCHAR2; 
+            name = mhmoCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            columnName = "MHMO_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = mhmoLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            columnName = "MHMO_PAYABLE"; 
+            externalType = VARCHAR2; 
+            name = mhmoPayable; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "MHMO_PRIORITE"; 
+            externalType = NUMBER; 
+            name = mhmoPriorite; 
+            precision = 2; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "MHMO_VALIDITE"; 
+            externalType = VARCHAR2; 
+            name = mhmoValidite; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        mhmoCode, 
+        mhmoLibelle, 
+        mhmoAbreviation, 
+        mhmoPriorite, 
+        mhmoPayable, 
+        mhmoValidite
+    ); 
+    className = "org.cocktail.groupescol.serveur.eof.ScolMaquetteHoraireMode"; 
+    classProperties = (mhmoLibelle, mhmoAbreviation, mhmoPriorite, mhmoPayable, mhmoValidite); 
+    externalName = "SCOL_MAQUETTE_HORAIRE_MODE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            mhmoLibelle, 
+            mhmoAbreviation, 
+            mhmoPriorite, 
+            mhmoPayable, 
+            mhmoValidite, 
+            scolMaquetteAps
+        ); 
+        "_javaClientClassName" = "org.cocktail.groupescol.client.eof.ScolMaquetteHoraireMode"; 
+    }; 
+    name = ScolMaquetteHoraireMode; 
+    primaryKeyAttributes = (mhmoCode); 
+}

@@ -1,0 +1,23 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {chercherDiplome = id; }; 
+            CLASS = "org.cocktail.groupescol.client.MainInterface"; 
+            LANGUAGE = Java; 
+            OUTLETS = {
+                bSearchDiplome = id; 
+                comboAnnees = id; 
+                comboParcours = id; 
+                comboSemestres = id; 
+                eodHabilitation = id; 
+                ongletModifCreat = id; 
+                tDiplome = id; 
+                tGrade = id; 
+                tableHabilitation = id; 
+            }; 
+            SUPERCLASS = "com.webobjects.eoapplication.EOInterfaceController"; 
+        }
+    ); 
+    IBVersion = 1; 
+}

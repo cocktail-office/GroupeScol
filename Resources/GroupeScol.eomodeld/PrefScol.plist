@@ -1,0 +1,97 @@
+{
+    attributes = (
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "FHAB_KEY"; 
+            externalType = NUMBER; 
+            name = fhabKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MRSEM_KEY"; 
+            externalType = NUMBER; 
+            name = mrsemKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "P_SCOL_KEY"; 
+            externalType = NUMBER; 
+            name = pScolKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (fannKey, fhabKey, mrsemKey, noIndividu, pScolKey); 
+    className = "org.cocktail.groupescol.serveur.eof.PrefScol"; 
+    classProperties = (
+        individuUlr, 
+        mrsemKey, 
+        scolFormationAnnee, 
+        scolFormationHabilitation, 
+        scolMaquetteRepartitionSem
+    ); 
+    externalName = "EDTSCOL.PREF_SCOL"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            individuUlr, 
+            mrsemKey, 
+            scolFormationAnnee, 
+            scolFormationHabilitation, 
+            scolMaquetteRepartitionSem
+        ); 
+        "_javaClientClassName" = "org.cocktail.groupescol.client.eof.PrefScol"; 
+    }; 
+    name = PrefScol; 
+    primaryKeyAttributes = (pScolKey); 
+    relationships = (
+        {
+            destination = IndividuUlr; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividu; }); 
+            name = individuUlr; 
+        }, 
+        {
+            destination = ScolFormationAnnee; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fannKey; sourceAttribute = fannKey; }); 
+            name = scolFormationAnnee; 
+        }, 
+        {
+            destination = ScolFormationHabilitation; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fhabKey; sourceAttribute = fhabKey; }); 
+            name = scolFormationHabilitation; 
+        }, 
+        {
+            destination = ScolMaquetteRepartitionSem; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mrsemKey; sourceAttribute = mrsemKey; }); 
+            name = scolMaquetteRepartitionSem; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

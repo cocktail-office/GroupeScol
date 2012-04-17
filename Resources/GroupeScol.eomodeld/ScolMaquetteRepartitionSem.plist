@@ -1,0 +1,77 @@
+{
+    attributes = (
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "MPAR_KEY"; 
+            externalType = NUMBER; 
+            name = mparKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "MRSEM_KEY"; 
+            externalType = NUMBER; 
+            name = mrsemKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "MSEM_KEY"; 
+            externalType = NUMBER; 
+            name = msemKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }
+    ); 
+    attributesUsedForLocking = (mrsemKey, mparKey, msemKey, fannKey); 
+    className = "org.cocktail.groupescol.serveur.eof.ScolMaquetteRepartitionSem"; 
+    classProperties = (scolFormationAnnee, scolMaquetteParcours, scolMaquetteSemestre); 
+    externalName = "SCOL_MAQUETTE_REPARTITION_SEM"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            scolFormationAnnee, 
+            scolMaquetteParcours, 
+            scolMaquetteSemestre, 
+            scolInscriptionSemestres
+        ); 
+        "_javaClientClassName" = "org.cocktail.groupescol.client.eof.ScolMaquetteRepartitionSem"; 
+    }; 
+    name = ScolMaquetteRepartitionSem; 
+    primaryKeyAttributes = (mrsemKey); 
+    relationships = (
+        {
+            destination = ScolFormationAnnee; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fannKey; sourceAttribute = fannKey; }); 
+            name = scolFormationAnnee; 
+        }, 
+        {
+            destination = ScolMaquetteParcours; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mparKey; sourceAttribute = mparKey; }); 
+            name = scolMaquetteParcours; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = ScolMaquetteSemestre; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = msemKey; sourceAttribute = msemKey; }); 
+            name = scolMaquetteSemestre; 
+            ownsDestination = Y; 
+        }
+    ); 
+}

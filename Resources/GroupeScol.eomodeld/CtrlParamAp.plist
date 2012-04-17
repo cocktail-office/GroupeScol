@@ -1,0 +1,77 @@
+{
+    attributes = (
+        {
+            columnName = "CPA_KEY"; 
+            externalType = NUMBER; 
+            name = cpaKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "GGRP_KEY"; 
+            externalType = NUMBER; 
+            name = ggrpKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MAP_KEY"; 
+            externalType = NUMBER; 
+            name = mapKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (cpaKey, ggrpKey, mapKey); 
+    className = "org.cocktail.groupescol.serveur.eof.CtrlParamAp"; 
+    classProperties = (
+        ctrlParamApIndividus, 
+        ctrlParamApObjets, 
+        ctrlParamApSalleChoixs, 
+        ctrlParamApSalles
+    ); 
+    externalName = "EDTSCOL.CTRL_PARAM_AP"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            ctrlParamApIndividus, 
+            ctrlParamApObjets, 
+            ctrlParamApSalleChoixs, 
+            ctrlParamApSalles
+        ); 
+        "_javaClientClassName" = "org.cocktail.groupescol.client.eof.CtrlParamAp"; 
+    }; 
+    name = CtrlParamAp; 
+    primaryKeyAttributes = (cpaKey); 
+    relationships = (
+        {
+            destination = CtrlParamApIndividu; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = cpaKey; sourceAttribute = cpaKey; }); 
+            name = ctrlParamApIndividus; 
+        }, 
+        {
+            destination = CtrlParamApObjet; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = cpaKey; sourceAttribute = cpaKey; }); 
+            name = ctrlParamApObjets; 
+        }, 
+        {
+            destination = CtrlParamApSalleChoix; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = cpaKey; sourceAttribute = cpaKey; }); 
+            name = ctrlParamApSalleChoixs; 
+        }, 
+        {
+            destination = CtrlParamApSalle; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = cpaKey; sourceAttribute = cpaKey; }); 
+            name = ctrlParamApSalles; 
+        }
+    ); 
+}

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="Sources"/>
+	<classpathentry kind="src" path="nibs/GroupeInclusion.nib"/>
+	<classpathentry kind="src" path="nibs/MainInterface.nib"/>
+	<classpathentry kind="src" path="nibs/LoginPasswd.nib"/>
+	<classpathentry kind="src" path="nibs/CreationCollection.nib"/>
+	<classpathentry kind="src" path="nibs/GroupesApController.nib"/>
+	<classpathentry kind="src" path="nibs/RecopieGroupesController.nib"/>
+	<classpathentry kind="src" path="nibs/InclusionNiveauDiplome.nib"/>
+	<classpathentry kind="src" path="nibs/CreationController.nib"/>
+	<classpathentry kind="src" path="nibs/GestionTrombino.nib"/>
+	<classpathentry kind="src" path="nibs/ModifierCollection.nib"/>
+	<classpathentry kind="var" path="NEXT_LOCAL_ROOT/Library/WebObjects/Extensions/ojdbc14.jar"/>
+	<classpathentry kind="con" path="WOFramework/CRIWebApp3"/>
+	<classpathentry kind="con" path="WOFramework/CRIWebExt3"/>
+	<classpathentry kind="con" path="WOFramework/JavaWOExtensions"/>
+	<classpathentry kind="con" path="WOFramework/JavaEOAccess"/>
+	<classpathentry kind="con" path="WOFramework/JavaEOApplication"/>
+	<classpathentry kind="con" path="WOFramework/JavaEOControl"/>
+	<classpathentry kind="con" path="WOFramework/JavaEODistribution"/>
+	<classpathentry kind="con" path="WOFramework/JavaEOInterface"/>
+	<classpathentry kind="con" path="WOFramework/JavaEOInterfaceSwing"/>
+	<classpathentry kind="con" path="WOFramework/JavaFoundation"/>
+	<classpathentry kind="con" path="WOFramework/JavaJDBCAdaptor"/>
+	<classpathentry kind="con" path="WOFramework/JavaWebObjects"/>
+	<classpathentry kind="con" path="WOFramework/JavaWebServicesSupport"/>
+	<classpathentry kind="con" path="WOFramework/JavaXML"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="Libraries/Server/axis.jar"/>
+	<classpathentry kind="lib" path="Libraries/Server/jxl.jar"/>
+	<classpathentry kind="lib" path="Libraries/Client/swing-layout-1.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

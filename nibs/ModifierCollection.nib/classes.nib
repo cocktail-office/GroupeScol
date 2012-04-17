@@ -1,0 +1,27 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {ajouterAp = id; modifierLibelle = id; rechercherAp = id; retirerAp = id; }; 
+            CLASS = "org.cocktail.groupescol.client.ModifierCollection"; 
+            LANGUAGE = Java; 
+            OUTLETS = {
+                bAjouterAp = id; 
+                bModifierLibelle = id; 
+                bRechercher = id; 
+                bRetirerAp = id; 
+                cEcLibre = id; 
+                comboMHCOCode = id; 
+                comboTypeEc = id; 
+                eodApRattaches = id; 
+                eodScolMaquetteAp = id; 
+                tLibelleCol = id; 
+                tSeuil = id; 
+                tableApRattaches = id; 
+                tableScolMaquetteAp = id; 
+            }; 
+            SUPERCLASS = "com.webobjects.eoapplication.EOInterfaceController"; 
+        }
+    ); 
+    IBVersion = 1; 
+}

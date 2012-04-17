@@ -1,0 +1,103 @@
+{
+    attributes = (
+        {
+            columnName = "DDIP_GROUPES"; 
+            externalType = VARCHAR2; 
+            name = ddipGroupes; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "DDIP_KEY"; 
+            externalType = NUMBER; 
+            name = ddipKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "DDIP_MAQUETTES"; 
+            externalType = VARCHAR2; 
+            name = ddipMaquettes; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "DLOG_KEY"; 
+            externalType = NUMBER; 
+            name = dlogKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "FHAB_KEY"; 
+            externalType = NUMBER; 
+            name = fhabKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }
+    ); 
+    attributesUsedForLocking = (ddipKey, dlogKey, fhabKey, ddipMaquettes, ddipGroupes, fannKey); 
+    className = "org.cocktail.groupescol.serveur.eof.ScolDroitDiplome"; 
+    classProperties = (
+        ddipMaquettes, 
+        ddipGroupes, 
+        scolDroitLogin, 
+        scolFormationAnnee, 
+        scolFormationHabilitation
+    ); 
+    externalName = "SCOL_DROIT_DIPLOME"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            ddipStatistiques, 
+            ddipMaquettes, 
+            ddipIpedagogiques, 
+            ddipGroupes, 
+            ddipExamens, 
+            ddipEdt, 
+            ddipBilan, 
+            scolDroitLogin, 
+            scolFormationAnnee, 
+            scolFormationHabilitation
+        ); 
+        "_javaClientClassName" = "org.cocktail.groupescol.client.eof.ScolDroitDiplome"; 
+    }; 
+    name = ScolDroitDiplome; 
+    primaryKeyAttributes = (ddipKey); 
+    relationships = (
+        {
+            destination = ScolDroitLogin; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = dlogKey; sourceAttribute = dlogKey; }); 
+            name = scolDroitLogin; 
+        }, 
+        {
+            destination = ScolFormationAnnee; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fannKey; sourceAttribute = fannKey; }); 
+            name = scolFormationAnnee; 
+        }, 
+        {
+            destination = ScolFormationHabilitation; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fhabKey; sourceAttribute = fhabKey; }); 
+            name = scolFormationHabilitation; 
+        }
+    ); 
+}

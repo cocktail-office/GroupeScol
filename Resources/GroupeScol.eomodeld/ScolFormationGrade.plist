@@ -1,0 +1,63 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "FGRA_ABREVIATION"; 
+            externalType = VARCHAR2; 
+            name = fgraAbreviation; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "FGRA_CODAGE"; 
+            externalType = VARCHAR2; 
+            name = fgraCodage; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2; 
+        }, 
+        {
+            columnName = "FGRA_CODE"; 
+            externalType = VARCHAR2; 
+            name = fgraCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            columnName = "FGRA_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = fgraLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            columnName = "FGRA_VALIDITE"; 
+            externalType = VARCHAR2; 
+            name = fgraValidite; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (fgraCode, fgraLibelle, fgraAbreviation, fgraCodage, fgraValidite); 
+    className = "org.cocktail.groupescol.serveur.eof.ScolFormationGrade"; 
+    classProperties = (fgraLibelle, fgraAbreviation, fgraCodage, fgraValidite); 
+    externalName = "SCOL_FORMATION_GRADE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            fgraLibelle, 
+            fgraAbreviation, 
+            fgraCodage, 
+            fgraValidite, 
+            scolInscriptionEtudiants
+        ); 
+        "_javaClientClassName" = "org.cocktail.groupescol.client.eof.ScolFormationGrade"; 
+    }; 
+    name = ScolFormationGrade; 
+    primaryKeyAttributes = (fgraCode); 
+}

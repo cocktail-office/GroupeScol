@@ -1,0 +1,56 @@
+{
+    attributes = (
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "GCOL_KEY"; 
+            externalType = NUMBER; 
+            name = gcolKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "MSEM_KEY"; 
+            externalType = NUMBER; 
+            name = msemKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }
+    ); 
+    attributesUsedForLocking = (gcolKey, msemKey, fannKey); 
+    className = "org.cocktail.groupescol.serveur.eof.VCollectionSemestre"; 
+    classProperties = (fannKey, scolGroupeCollection, scolMaquetteSemestre); 
+    externalName = "EDTSCOL.V_COLLECTION_SEMESTRE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (fannKey, scolMaquetteSemestre, scolGroupeCollection); 
+        "_javaClientClassName" = "org.cocktail.groupescol.client.eof.VCollectionSemestre"; 
+        "_nameInObjectStore" = "V_COLLECTION_SEMESTRE"; 
+    }; 
+    name = VCollectionSemestre; 
+    primaryKeyAttributes = (gcolKey, msemKey, fannKey); 
+    relationships = (
+        {
+            destination = ScolGroupeCollection; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = gcolKey; sourceAttribute = gcolKey; }); 
+            name = scolGroupeCollection; 
+        }, 
+        {
+            destination = ScolMaquetteSemestre; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = msemKey; sourceAttribute = msemKey; }); 
+            name = scolMaquetteSemestre; 
+        }
+    ); 
+}

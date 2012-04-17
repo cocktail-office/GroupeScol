@@ -1,0 +1,108 @@
+{
+    attributes = (
+        {
+            columnName = "C_CIVILITE"; 
+            externalType = VARCHAR2; 
+            name = cCivilite; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IND_QUALITE"; 
+            externalType = VARCHAR2; 
+            name = indQualite; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 120; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            precision = 8; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "NOM_USUEL"; 
+            externalType = VARCHAR2; 
+            name = nomUsuel; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 80; 
+        }, 
+        {
+            columnName = "PERS_ID"; 
+            externalType = NUMBER; 
+            name = persId; 
+            valueClassName = NSNumber; 
+            valueType = d; 
+        }, 
+        {
+            columnName = PRENOM; 
+            externalType = VARCHAR2; 
+            name = prenom; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 30; 
+        }, 
+        {
+            columnName = "TEM_VALIDE"; 
+            externalType = VARCHAR2; 
+            name = temValide; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (noIndividu, persId, prenom, cCivilite, nomUsuel, indQualite, temValide); 
+    className = "org.cocktail.groupescol.serveur.eof.IndividuUlr"; 
+    classProperties = (persId, prenom, cCivilite, nomUsuel, indQualite, temValide); 
+    externalName = "GRHUM.INDIVIDU_ULR"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            persId, 
+            nomPatronymique, 
+            prenom, 
+            cCivilite, 
+            nomUsuel, 
+            prenom2, 
+            dNaissance, 
+            villeDeNaissance, 
+            cDeptNaissance, 
+            cPaysNaissance, 
+            cPaysNationalite, 
+            dNaturalisation, 
+            dDeces, 
+            indCSitMilitaire, 
+            indCSituationFamille, 
+            indNoInsee, 
+            indCleInsee, 
+            indQualite, 
+            indPhoto, 
+            indActivite, 
+            indOrigine, 
+            dCreation, 
+            dModification, 
+            temSsDiplome, 
+            temValide, 
+            indAgenda, 
+            languePref, 
+            listeRouge, 
+            categoriePrinc, 
+            orgaCode, 
+            orgaLibelle, 
+            repartStructure, 
+            occupant, 
+            temValide, 
+            resaOccupants, 
+            repartComptes
+        ); 
+        "_javaClientClassName" = "org.cocktail.groupescol.client.eof.IndividuUlr"; 
+    }; 
+    name = IndividuUlr; 
+    primaryKeyAttributes = (noIndividu); 
+}

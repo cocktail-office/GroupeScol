@@ -1,0 +1,34 @@
+{
+    attributes = (
+        {
+            columnName = "CPA_KEY"; 
+            externalType = NUMBER; 
+            name = cpaKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "CPAO_KEY"; 
+            externalType = NUMBER; 
+            name = cpaoKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "RO_KEY"; 
+            externalType = NUMBER; 
+            name = roKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (cpaKey, cpaoKey, roKey); 
+    className = "org.cocktail.groupescol.serveur.eof.CtrlParamApObjet"; 
+    externalName = "EDTSCOL.CTRL_PARAM_AP_OBJET"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_javaClientClassName" = "org.cocktail.groupescol.client.eof.CtrlParamApObjet"; 
+    }; 
+    name = CtrlParamApObjet; 
+    primaryKeyAttributes = (cpaoKey); 
+}

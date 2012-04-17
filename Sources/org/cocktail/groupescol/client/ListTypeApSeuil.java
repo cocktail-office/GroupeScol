@@ -1,0 +1,163 @@
+/*
+ * Copyright COCKTAIL (www.cocktail.org), 2001, 2012 
+ * 
+ * This software is governed by the CeCILL license under French law and
+ * abiding by the rules of distribution of free software. You can use, 
+ * modify and/or redistribute the software under the terms of the CeCILL
+ * license as circulated by CEA, CNRS and INRIA at the following URL
+ * "http://www.cecill.info". 
+ * 
+ * As a counterpart to the access to the source code and rights to copy,
+ * modify and redistribute granted by the license, users are provided only
+ * with a limited warranty and the software's author, the holder of the
+ * economic rights, and the successive licensors have only limited
+ * liability. 
+ * 
+ * In this respect, the user's attention is drawn to the risks associated
+ * with loading, using, modifying and/or developing or reproducing the
+ * software by the user in light of its specific status of free software,
+ * that may mean that it is complicated to manipulate, and that also
+ * therefore means that it is reserved for developers and experienced
+ * professionals having in-depth computer knowledge. Users are therefore
+ * encouraged to load and test the software's suitability as regards their
+ * requirements in conditions enabling the security of their systems and/or 
+ * data to be ensured and, more generally, to use and operate it in the 
+ * same conditions as regards security. 
+ * 
+ * The fact that you are presently reading this means that you have had
+ * knowledge of the CeCILL license and that you accept its terms.
+ */
+package org.cocktail.groupescol.client;
+
+import java.awt.Color;
+import java.awt.Component;
+
+import javax.swing.AbstractListModel;
+import javax.swing.DefaultListCellRenderer;
+import javax.swing.JList;
+import javax.swing.JScrollPane;
+import javax.swing.ListSelectionModel;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+
+import com.webobjects.foundation.NSArray;
+import com.webobjects.foundation.NSSelector;
+
+public class ListTypeApSeuil extends JScrollPane {
+
+	private JList list;
+	private MyListModel listModel;
+	private Object owner;
+	private String callback;
+
+	public ListTypeApSeuil(Object owner, String acallback) {
+		super();
+		this.owner = owner;
+		this.callback = acallback;
+
+		listModel = new MyListModel();
+		list = new JList(listModel);
+		list.setCellRenderer(new MyCellRenderer());
+
+		// list.setPreferredSize(this.getPreferredSize());
+		list.setVisibleRowCount(1);
+		list.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+		this.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+		this.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		this.setViewportView(list);
+		list.setSelectedIndex(0);
+
+		list.addListSelectionListener(new MyListListener());
+	}
+
+	public NSArray getSelectedItems() {
+		return new NSArray(list.getSelectedValues());
+	}
+
+	public TypeApSeuilHolder getSelectedItem() {
+		return (TypeApSeuilHolder) list.getSelectedValue();
+	}
+
+	public void setObjects(NSArray objects) {
+		if (objects != null) {
+			listModel.setObjects(objects);
+		}
+		else {
+			listModel.setObjects(new NSArray());
+		}
+	}
+
+	/** Listener de changement de selection */
+	private class MyListListener implements ListSelectionListener {
+		public void valueChanged(ListSelectionEvent event) {
+			if (!event.getValueIsAdjusting()) {
+				Object selection = list.getSelectedValue();
+				try {
+					NSSelector.invoke(callback, new Class[] { Object.class }, owner, new Object[] { selection });
+				}
+				catch (Exception exe) {
+					exe.printStackTrace();
+				}
+			}
+		}
+	}
+
+	/** classe model du JList */
+	private class MyListModel extends AbstractListModel {
+		NSArray data = new NSArray();
+		int size = 0;
+
+		public void setObjects(NSArray objects) {
+			this.data = objects;
+			size = objects.count();
+			fireContentsChanged(this, 0, size);
+		}
+
+		public int getSize() {
+			return size;
+		}
+
+		public Object getElementAt(int index) {
+			if (data.count() > index) {
+				return data.objectAtIndex(index);
+			}
+			else {
+				return null;
+			}
+		}
+	}
+
+	/** classe de rendu de la liste */
+	class MyCellRenderer extends DefaultListCellRenderer {
+
+		public Component getListCellRendererComponent(JList list, Object value, int index, boolean iss, boolean chf) {
+
+			super.getListCellRendererComponent(list, value, index, iss, chf);
+
+			String mhcoCode = ((TypeApSeuilHolder) value).mhcoCode();
+			if (!iss) {
+				if (mhcoCode.equals("TP")) {
+					setBackground(MainClient.JAUNE);
+				}
+				else
+					if (mhcoCode.equals("TD")) {
+						setBackground(MainClient.VERT);
+					}
+					else
+						if (mhcoCode.equals("CM")) {
+							setBackground(MainClient.BLEU);
+						}
+						else {
+							setBackground(MainClient.VIOLET);
+						}
+
+			}
+			else {
+				setBackground(Color.BLACK);
+				setForeground(Color.WHITE);
+			}
+			return this;
+		}
+	}
+
+}

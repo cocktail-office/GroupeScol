@@ -1,0 +1,10 @@
+v1.0.6.12 du 29/11/2011
+
++
+
+- La recopie des groupes: le résultat n'était pas visible car après la recopie, les nouvelles collections
+ne sont pas encore rattachées à des AP, et on ne voyait pas les collections sans APs rattachés...
+Méthode d'affichage des collections du semestre modifiée en conséquence, maintenant c'est ok. (DT Cocktail #4164)
+- Possibilité de ventiler les étudiants inscrits à la carte (DT Cocktail #3923)
+- Suppression de l'utilisation du framework PlanningExtensions
+- Interdiction de mettre un groupe fils de 2 groupes d'une même collection (DT Cocktail #4182)

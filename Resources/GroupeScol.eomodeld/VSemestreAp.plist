@@ -1,0 +1,88 @@
+{
+    attributes = (
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "MAP_KEY"; 
+            externalType = NUMBER; 
+            name = mapKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "MEC_KEY"; 
+            externalType = NUMBER; 
+            name = mecKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "MSEM_KEY"; 
+            externalType = NUMBER; 
+            name = msemKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }
+    ); 
+    attributesUsedForLocking = (fannKey, msemKey, mecKey, mapKey); 
+    className = "org.cocktail.groupescol.serveur.eof.VSemestreAp"; 
+    classProperties = (fannKey, ap, semestre, ecLibre, scolMaquetteEc, repartitionEc); 
+    externalName = "EDTSCOL.V_SEMESTRE_AP"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (fannKey, ap, semestre, ecLibre, scolMaquetteEc, repartitionEc); 
+        "_javaClientClassName" = "org.cocktail.groupescol.client.eof.VSemestreAp"; 
+        "_nameInObjectStore" = "V_SEMESTRE_AP"; 
+    }; 
+    name = VSemestreAp; 
+    primaryKeyAttributes = (mapKey); 
+    relationships = (
+        {
+            destination = ScolMaquetteAp; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mapKey; sourceAttribute = mapKey; }); 
+            name = ap; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = ScolMaquetteEcLibre; 
+            internalInfo = {"_nameInObjectStore" = scolMaquetteEcLibre; }; 
+            isToMany = N; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = mecKey; sourceAttribute = mecKey; }); 
+            name = ecLibre; 
+        }, 
+        {
+            destination = ScolMaquetteRepartitionEc; 
+            internalInfo = {"_nameInObjectStore" = scolMaquetteRepartitionEc; }; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mecKey; sourceAttribute = mecKey; }); 
+            name = repartitionEc; 
+        }, 
+        {
+            destination = ScolMaquetteEc; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mecKey; sourceAttribute = mecKey; }); 
+            name = scolMaquetteEc; 
+        }, 
+        {
+            destination = ScolMaquetteSemestre; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = msemKey; sourceAttribute = msemKey; }); 
+            name = semestre; 
+        }
+    ); 
+}

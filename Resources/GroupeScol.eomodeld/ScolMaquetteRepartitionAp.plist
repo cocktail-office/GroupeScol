@@ -1,0 +1,110 @@
+{
+    attributes = (
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "MAP_KEY"; 
+            externalType = NUMBER; 
+            name = mapKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "MEC_KEY"; 
+            externalType = NUMBER; 
+            name = mecKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "MRAP_KEY"; 
+            externalType = NUMBER; 
+            name = mrapKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MRAP_MAJEUR"; 
+            externalType = VARCHAR2; 
+            name = mrapMajeur; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MRAP_SEMESTRE"; 
+            externalType = NUMBER; 
+            name = mrapSemestre; 
+            precision = 1; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }
+    ); 
+    attributesUsedForLocking = (mrapKey, mecKey, mapKey, mrapSemestre, mrapMajeur, fannKey); 
+    className = "org.cocktail.groupescol.serveur.eof.ScolMaquetteRepartitionAp"; 
+    classProperties = (
+        mrapSemestre, 
+        mrapMajeur, 
+        scolFormationAnnee, 
+        scolMaquetteAp, 
+        scolMaquetteEc, 
+        scolInscriptionAps
+    ); 
+    externalName = "SCOL_MAQUETTE_REPARTITION_AP"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            mrapSemestre, 
+            mrapMajeur, 
+            scolFormationAnnee, 
+            scolMaquetteAp, 
+            scolMaquetteEc, 
+            scolInscriptionAps
+        ); 
+        "_javaClientClassName" = "org.cocktail.groupescol.client.eof.ScolMaquetteRepartitionAp"; 
+    }; 
+    name = ScolMaquetteRepartitionAp; 
+    primaryKeyAttributes = (mrapKey); 
+    relationships = (
+        {
+            destination = ScolFormationAnnee; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fannKey; sourceAttribute = fannKey; }); 
+            name = scolFormationAnnee; 
+        }, 
+        {
+            destination = ScolInscriptionAp; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mrapKey; sourceAttribute = mrapKey; }); 
+            name = scolInscriptionAps; 
+            numberOfToManyFaultsToBatchFetch = 20; 
+        }, 
+        {
+            destination = ScolMaquetteAp; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mapKey; sourceAttribute = mapKey; }); 
+            name = scolMaquetteAp; 
+        }, 
+        {
+            destination = ScolMaquetteEc; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mecKey; sourceAttribute = mecKey; }); 
+            name = scolMaquetteEc; 
+        }
+    ); 
+}

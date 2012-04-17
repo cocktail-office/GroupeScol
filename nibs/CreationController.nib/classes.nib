@@ -1,0 +1,53 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = "java.awt.Container"; LANGUAGE = Java; SUPERCLASS = NSView; }, 
+        {
+            ACTIONS = {
+                afficherGroupesPourAp = id; 
+                afficherTousLesAps = id; 
+                ajouterGroupe = id; 
+                creerCollection = id; 
+                enregistrer = id; 
+                exclure = id; 
+                inclure = id; 
+                inclureNiveauDiplome = id; 
+                modifierCollection = id; 
+                modifierGroupe = id; 
+                rechargerAp = id; 
+                selectionnerTousLesAps = id; 
+                supprimerCollection = id; 
+                supprimerGroupe = id; 
+            }; 
+            CLASS = "org.cocktail.groupescol.client.CreationController"; 
+            LANGUAGE = Java; 
+            OUTLETS = {
+                bCreerCol = id; 
+                bCreerGrp = id; 
+                bDesinclure = id; 
+                bFetchAllAp = id; 
+                bGrpAp = id; 
+                bInclure = id; 
+                bInclureND = id; 
+                bModifCol = id; 
+                bModifGrp = id; 
+                bSelectAllAp = id; 
+                bSupprCol = id; 
+                bSupprGrp = id; 
+                cEcLibre = id; 
+                comboTypeEc = id; 
+                eodCollection = id; 
+                eodGroupeInclusion = id; 
+                eodGrpGroupe = id; 
+                eodMaquetteAp = id; 
+                tableCollection = id; 
+                tableGroupeGrp = id; 
+                tableGroupeInclusion = id; 
+                tableMaquetteAp = id; 
+                typeApSeuilContainer = id; 
+            }; 
+            SUPERCLASS = "com.webobjects.eoapplication.EOInterfaceController"; 
+        }
+    ); 
+    IBVersion = 1; 
+}

@@ -1,0 +1,20 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {fermer = id; imprimerTrombino = id; listeExcel = id; }; 
+            CLASS = "org.cocktail.groupescol.client.GestionTrombino"; 
+            LANGUAGE = Java; 
+            OUTLETS = {
+                eodCollection = id; 
+                eodGroupeGrp = id; 
+                eodInscriptionGrp = id; 
+                tableCollection = id; 
+                tableGroupeGrp = id; 
+                tableInscriptionGrp = id; 
+            }; 
+            SUPERCLASS = "com.webobjects.eoapplication.EOInterfaceController"; 
+        }
+    ); 
+    IBVersion = 1; 
+}

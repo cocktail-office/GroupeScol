@@ -1,0 +1,114 @@
+{
+    attributes = (
+        {
+            columnName = "FSPN_KEY"; 
+            externalType = NUMBER; 
+            name = fspnKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "FVOC_CODE"; 
+            externalType = VARCHAR2; 
+            name = fvocCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MPAR_ABREVIATION"; 
+            externalType = VARCHAR2; 
+            name = mparAbreviation; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            columnName = "MPAR_CODE"; 
+            externalType = VARCHAR2; 
+            name = mparCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 15; 
+        }, 
+        {
+            columnName = "MPAR_KEY"; 
+            externalType = NUMBER; 
+            name = mparKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "MPAR_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = mparLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            columnName = "MPAR_VALIDITE"; 
+            externalType = VARCHAR2; 
+            name = mparValidite; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        mparKey, 
+        fspnKey, 
+        mparCode, 
+        mparLibelle, 
+        mparAbreviation, 
+        fvocCode, 
+        mparValidite
+    ); 
+    className = "org.cocktail.groupescol.serveur.eof.ScolMaquetteParcours"; 
+    classProperties = (
+        mparCode, 
+        mparLibelle, 
+        mparAbreviation, 
+        fvocCode, 
+        mparValidite, 
+        scolFormationSpecialisation, 
+        scolMaquetteRepartitionSems
+    ); 
+    externalName = "SCOL_MAQUETTE_PARCOURS"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            mparCode, 
+            mparLibelle, 
+            mparAbreviation, 
+            fvocCode, 
+            mparValidite, 
+            scolFormationSpecialisation, 
+            scolInscriptionEtudiants, 
+            scolMaquetteRepartitionSems
+        ); 
+        "_javaClientClassName" = "org.cocktail.groupescol.client.eof.ScolMaquetteParcours"; 
+    }; 
+    name = ScolMaquetteParcours; 
+    primaryKeyAttributes = (mparKey); 
+    relationships = (
+        {
+            destination = ScolFormationSpecialisation; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fspnKey; sourceAttribute = fspnKey; }); 
+            name = scolFormationSpecialisation; 
+        }, 
+        {
+            deleteRule = EODeleteRuleDeny; 
+            destination = ScolMaquetteRepartitionSem; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mparKey; sourceAttribute = mparKey; }); 
+            name = scolMaquetteRepartitionSems; 
+        }
+    ); 
+}

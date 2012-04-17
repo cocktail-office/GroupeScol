@@ -1,0 +1,197 @@
+{
+    EOModelVersion = "2.1"; 
+    adaptorName = JDBC; 
+    connectionDictionary = {URL = ""; driver = ""; password = ""; plugin = ""; username = ""; }; 
+    entities = (
+        {
+            className = "org.cocktail.groupescol.serveur.eof.CtrlParamAp"; 
+            name = CtrlParamAp; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.CtrlParamApIndividu"; 
+            name = CtrlParamApIndividu; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.CtrlParamApObjet"; 
+            name = CtrlParamApObjet; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.CtrlParamApSalle"; 
+            name = CtrlParamApSalle; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.CtrlParamApSalleChoix"; 
+            name = CtrlParamApSalleChoix; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.IndividuUlr"; 
+            name = IndividuUlr; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.PhotosEtudiantsGrhum"; 
+            name = PhotosEtudiantsGrhum; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.PhotosEtudiantsOldGrhum"; 
+            name = PhotosEtudiantsOldGrhum; 
+        }, 
+        {className = "org.cocktail.groupescol.serveur.eof.PrefScol"; name = PrefScol; }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.RepartStructure"; 
+            name = RepartStructure; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.ScolDroitDiplome"; 
+            name = ScolDroitDiplome; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.ScolDroitLogin"; 
+            name = ScolDroitLogin; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.ScolFormationAnnee"; 
+            name = ScolFormationAnnee; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.ScolFormationDiplome"; 
+            name = ScolFormationDiplome; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.ScolFormationDomaine"; 
+            name = ScolFormationDomaine; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.ScolFormationFiliere"; 
+            name = ScolFormationFiliere; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.ScolFormationGrade"; 
+            name = ScolFormationGrade; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.ScolFormationHabilitation"; 
+            name = ScolFormationHabilitation; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.ScolFormationSpecialisation"; 
+            name = ScolFormationSpecialisation; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.ScolGroupeCollection"; 
+            name = ScolGroupeCollection; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.ScolGroupeGrp"; 
+            name = ScolGroupeGrp; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.ScolGroupeInclusion"; 
+            name = ScolGroupeInclusion; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.ScolGroupeIncompatibilite"; 
+            name = ScolGroupeIncompatibilite; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.ScolGroupeObjet"; 
+            name = ScolGroupeObjet; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.ScolInscriptionAp"; 
+            name = ScolInscriptionAp; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.ScolInscriptionEc"; 
+            name = ScolInscriptionEc; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.ScolInscriptionEtudiant"; 
+            name = ScolInscriptionEtudiant; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.ScolInscriptionGrp"; 
+            name = ScolInscriptionGrp; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.ScolInscriptionSemestre"; 
+            name = ScolInscriptionSemestre; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.ScolMaquetteAp"; 
+            name = ScolMaquetteAp; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.ScolMaquetteEc"; 
+            name = ScolMaquetteEc; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.ScolMaquetteEcLibre"; 
+            name = ScolMaquetteEcLibre; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.ScolMaquetteHoraireCode"; 
+            name = ScolMaquetteHoraireCode; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.ScolMaquetteHoraireMode"; 
+            name = ScolMaquetteHoraireMode; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.ScolMaquetteParcours"; 
+            name = ScolMaquetteParcours; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.ScolMaquetteRepartitionAp"; 
+            name = ScolMaquetteRepartitionAp; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.ScolMaquetteRepartitionEc"; 
+            name = ScolMaquetteRepartitionEc; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.ScolMaquetteRepartitionSem"; 
+            name = ScolMaquetteRepartitionSem; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.ScolMaquetteRepartitionUe"; 
+            name = ScolMaquetteRepartitionUe; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.ScolMaquetteSemestre"; 
+            name = ScolMaquetteSemestre; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.ScolMaquetteTypeEc"; 
+            name = ScolMaquetteTypeEc; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.ScolMaquetteUe"; 
+            name = ScolMaquetteUe; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.ScolTransfertGrp"; 
+            name = ScolTransfertGrp; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.ScolTransfertMap"; 
+            name = ScolTransfertMap; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.StructureUlr"; 
+            name = StructureUlr; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.VCollectionSemestre"; 
+            name = VCollectionSemestre; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.VScolMaquetteApEc"; 
+            name = VScolMaquetteApEc; 
+        }, 
+        {
+            className = "org.cocktail.groupescol.serveur.eof.VSemestreAp"; 
+            name = VSemestreAp; 
+        }
+    ); 
+    userInfo = {modelId = LMD; }; 
+}

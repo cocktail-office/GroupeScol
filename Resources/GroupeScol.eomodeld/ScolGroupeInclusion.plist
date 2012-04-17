@@ -1,0 +1,47 @@
+{
+    attributes = (
+        {
+            columnName = "GGRP_KEY_1"; 
+            externalType = NUMBER; 
+            name = ggrpKey1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "GGRP_KEY_2"; 
+            externalType = NUMBER; 
+            name = ggrpKey2; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (ggrpKey1, ggrpKey2); 
+    className = "org.cocktail.groupescol.serveur.eof.ScolGroupeInclusion"; 
+    classProperties = (scolGroupeGrpFils, scolGroupeGrpPere); 
+    externalName = "SCOL_GROUPE_INCLUSION"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (scolGroupeGrpPere, scolGroupeGrpFils); 
+        "_javaClientClassName" = "org.cocktail.groupescol.client.eof.ScolGroupeInclusion"; 
+    }; 
+    name = ScolGroupeInclusion; 
+    primaryKeyAttributes = (ggrpKey2, ggrpKey1); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = ScolGroupeGrp; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = ggrpKey; sourceAttribute = ggrpKey2; }); 
+            name = scolGroupeGrpFils; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = ScolGroupeGrp; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = ggrpKey; sourceAttribute = ggrpKey1; }); 
+            name = scolGroupeGrpPere; 
+        }
+    ); 
+}

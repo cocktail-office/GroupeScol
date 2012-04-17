@@ -1,0 +1,48 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "FFIL_ABREVIATION"; 
+            externalType = VARCHAR2; 
+            name = ffilAbreviation; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            columnName = "FFIL_CODE"; 
+            externalType = VARCHAR2; 
+            name = ffilCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            columnName = "FFIL_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = ffilLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            columnName = "FFIL_VALIDITE"; 
+            externalType = VARCHAR2; 
+            name = ffilValidite; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (ffilCode, ffilLibelle, ffilAbreviation, ffilValidite); 
+    className = "org.cocktail.groupescol.serveur.eof.ScolFormationFiliere"; 
+    classProperties = (ffilLibelle, ffilAbreviation, ffilValidite); 
+    externalName = "SCOL_FORMATION_FILIERE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (ffilLibelle, ffilAbreviation, ffilValidite); 
+        "_javaClientClassName" = "org.cocktail.groupescol.client.eof.ScolFormationFiliere"; 
+    }; 
+    name = ScolFormationFiliere; 
+    primaryKeyAttributes = (ffilCode); 
+}

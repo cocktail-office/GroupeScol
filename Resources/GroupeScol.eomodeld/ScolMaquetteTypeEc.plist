@@ -1,0 +1,56 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "MTEC_ABREVIATION"; 
+            externalType = VARCHAR2; 
+            name = mtecAbreviation; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            columnName = "MTEC_CHOIX"; 
+            externalType = VARCHAR2; 
+            name = mtecChoix; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "MTEC_CODE"; 
+            externalType = VARCHAR2; 
+            name = mtecCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            columnName = "MTEC_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = mtecLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            columnName = "MTEC_VALIDITE"; 
+            externalType = VARCHAR2; 
+            name = mtecValidite; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (mtecCode, mtecLibelle, mtecAbreviation, mtecChoix, mtecValidite); 
+    className = "org.cocktail.groupescol.serveur.eof.ScolMaquetteTypeEc"; 
+    classProperties = (mtecLibelle, mtecAbreviation, mtecChoix, mtecCode); 
+    externalName = "SCOL_MAQUETTE_TYPE_EC"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (mtecLibelle, mtecAbreviation, mtecChoix, mtecCode); 
+        "_javaClientClassName" = "org.cocktail.groupescol.client.eof.ScolMaquetteTypeEc"; 
+    }; 
+    name = ScolMaquetteTypeEc; 
+    primaryKeyAttributes = (mtecCode); 
+}

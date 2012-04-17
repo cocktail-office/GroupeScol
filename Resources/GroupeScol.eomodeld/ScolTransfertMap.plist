@@ -1,0 +1,46 @@
+{
+    attributes = (
+        {
+            columnName = "KEY_NEW"; 
+            externalType = Number; 
+            name = keyNew; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "KEY_OLD"; 
+            externalType = Number; 
+            name = keyOld; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (keyNew, keyOld); 
+    className = "org.cocktail.groupescol.serveur.eof.ScolTransfertMap"; 
+    classProperties = (newAp, oldAp); 
+    externalName = "SCOL_TRANSFERT_MAP"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (Attribute, oldAp, newAp); 
+        "_javaClientClassName" = "org.cocktail.groupescol.client.eof.ScolTransfertMap"; 
+        "_nameInObjectStore" = "SCOLARITE.SCOL_TRANSFERT_MAP"; 
+    }; 
+    name = ScolTransfertMap; 
+    primaryKeyAttributes = (keyNew, keyOld); 
+    relationships = (
+        {
+            destination = ScolMaquetteAp; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mapKey; sourceAttribute = keyNew; }); 
+            name = newAp; 
+        }, 
+        {
+            destination = ScolMaquetteAp; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mapKey; sourceAttribute = keyOld; }); 
+            name = oldAp; 
+        }
+    ); 
+}

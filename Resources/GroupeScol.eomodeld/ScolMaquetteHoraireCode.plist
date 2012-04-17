@@ -1,0 +1,65 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "MHCO_ABREVIATION"; 
+            externalType = VARCHAR2; 
+            name = mhcoAbreviation; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            columnName = "MHCO_CODE"; 
+            externalType = VARCHAR2; 
+            name = mhcoCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            columnName = "MHCO_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = mhcoLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            columnName = "MHCO_SEUIL"; 
+            externalType = NUMBER; 
+            name = mhcoSeuil; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "MHCO_VALIDITE"; 
+            externalType = VARCHAR2; 
+            name = mhcoValidite; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (mhcoCode, mhcoLibelle, mhcoAbreviation, mhcoSeuil, mhcoValidite); 
+    className = "org.cocktail.groupescol.serveur.eof.ScolMaquetteHoraireCode"; 
+    classProperties = (mhcoLibelle, mhcoAbreviation, mhcoSeuil, mhcoValidite, mhcoCode); 
+    externalName = "SCOL_MAQUETTE_HORAIRE_CODE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            mhcoLibelle, 
+            mhcoAbreviation, 
+            mhcoPriorite, 
+            mhcoNumerateur, 
+            mhcoSeuil, 
+            mhcoValidite, 
+            scolMaquetteAps, 
+            mhcoCode
+        ); 
+        "_javaClientClassName" = "org.cocktail.groupescol.client.eof.ScolMaquetteHoraireCode"; 
+    }; 
+    name = ScolMaquetteHoraireCode; 
+    primaryKeyAttributes = (mhcoCode); 
+}

@@ -1,0 +1,62 @@
+{
+    attributes = (
+        {
+            columnName = "GCOL_DATE_DEBUT"; 
+            externalType = NUMBER; 
+            name = gcolDateDebut; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "GCOL_DATE_FIN"; 
+            externalType = NUMBER; 
+            name = gcolDateFin; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "GCOL_KEY"; 
+            externalType = NUMBER; 
+            name = gcolKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "GCOL_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = gcolLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }
+    ); 
+    attributesUsedForLocking = (gcolKey, gcolLibelle, gcolDateDebut, gcolDateFin); 
+    className = "org.cocktail.groupescol.serveur.eof.ScolGroupeCollection"; 
+    classProperties = (gcolLibelle, gcolDateDebut, gcolDateFin, scolGroupeGrps, scolFormationAnnee); 
+    externalName = "SCOL_GROUPE_COLLECTION"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (gcolLibelle, gcolDateDebut, gcolDateFin, scolGroupeGrps, scolFormationAnnee); 
+        "_javaClientClassName" = "org.cocktail.groupescol.client.eof.ScolGroupeCollection"; 
+    }; 
+    name = ScolGroupeCollection; 
+    primaryKeyAttributes = (gcolKey); 
+    relationships = (
+        {
+            destination = ScolFormationAnnee; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fannKey; sourceAttribute = gcolDateDebut; }); 
+            name = scolFormationAnnee; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = ScolGroupeGrp; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = gcolKey; sourceAttribute = gcolKey; }); 
+            name = scolGroupeGrps; 
+        }
+    ); 
+}

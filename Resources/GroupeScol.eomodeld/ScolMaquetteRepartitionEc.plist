@@ -1,0 +1,197 @@
+{
+    attributes = (
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "MEC_KEY"; 
+            externalType = NUMBER; 
+            name = mecKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "MREC_BONIFIABLE"; 
+            externalType = NUMBER; 
+            name = mrecBonifiable; 
+            precision = 1; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "MREC_COEFFICIENT"; 
+            externalType = NUMBER; 
+            name = mrecCoefficient; 
+            precision = 5; 
+            scale = 2; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            columnName = "MREC_COMPTABILISABLE"; 
+            externalType = NUMBER; 
+            name = mrecComptabilisable; 
+            precision = 1; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "MREC_KEY"; 
+            externalType = NUMBER; 
+            name = mrecKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MREC_NIVEAU"; 
+            externalType = VARCHAR2; 
+            name = mrecNiveau; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            columnName = "MREC_NOTE_BASE"; 
+            externalType = NUMBER; 
+            name = mrecNoteBase; 
+            precision = 5; 
+            scale = 2; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MREC_NOTE_ELIMINATION"; 
+            externalType = NUMBER; 
+            name = mrecNoteElimination; 
+            precision = 5; 
+            scale = 2; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            columnName = "MREC_NOTE_OBTENTION"; 
+            externalType = NUMBER; 
+            name = mrecNoteObtention; 
+            precision = 5; 
+            scale = 2; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            columnName = "MREC_ORDRE"; 
+            externalType = NUMBER; 
+            name = mrecOrdre; 
+            precision = 2; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "MTEC_CODE"; 
+            externalType = VARCHAR2; 
+            name = mtecCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            columnName = "MUE_KEY"; 
+            externalType = NUMBER; 
+            name = mueKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        mrecKey, 
+        mueKey, 
+        mecKey, 
+        mrecOrdre, 
+        mtecCode, 
+        mrecNiveau, 
+        mrecComptabilisable, 
+        mrecBonifiable, 
+        mrecCoefficient, 
+        mrecNoteBase, 
+        mrecNoteObtention, 
+        mrecNoteElimination, 
+        fannKey
+    ); 
+    className = "org.cocktail.groupescol.serveur.eof.ScolMaquetteRepartitionEc"; 
+    classProperties = (
+        mrecOrdre, 
+        mtecCode, 
+        mrecNiveau, 
+        mrecComptabilisable, 
+        mrecBonifiable, 
+        mrecCoefficient, 
+        mrecNoteBase, 
+        mrecNoteObtention, 
+        mrecNoteElimination, 
+        scolFormationAnnee, 
+        scolMaquetteEc, 
+        scolMaquetteUe, 
+        scolInscriptionEcs
+    ); 
+    externalName = "SCOL_MAQUETTE_REPARTITION_EC"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            mrecOrdre, 
+            mtecCode, 
+            mrecNiveau, 
+            mrecComptabilisable, 
+            mrecBonifiable, 
+            mrecCoefficient, 
+            mrecNoteBase, 
+            mrecNoteObtention, 
+            mrecNoteElimination, 
+            scolFormationAnnee, 
+            scolMaquetteEc, 
+            scolMaquetteUe, 
+            scolInscriptionEcs
+        ); 
+        "_javaClientClassName" = "org.cocktail.groupescol.client.eof.ScolMaquetteRepartitionEc"; 
+    }; 
+    name = ScolMaquetteRepartitionEc; 
+    primaryKeyAttributes = (mrecKey); 
+    relationships = (
+        {
+            destination = ScolFormationAnnee; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fannKey; sourceAttribute = fannKey; }); 
+            name = scolFormationAnnee; 
+        }, 
+        {
+            destination = ScolInscriptionEc; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mrecKey; sourceAttribute = mrecKey; }); 
+            name = scolInscriptionEcs; 
+        }, 
+        {
+            destination = ScolMaquetteEc; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mecKey; sourceAttribute = mecKey; }); 
+            name = scolMaquetteEc; 
+        }, 
+        {
+            destination = ScolMaquetteUe; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mueKey; sourceAttribute = mueKey; }); 
+            name = scolMaquetteUe; 
+        }
+    ); 
+}

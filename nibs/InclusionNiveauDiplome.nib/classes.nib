@@ -1,0 +1,22 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {annuler = id; valider = id; }; 
+            CLASS = "org.cocktail.groupescol.client.InclusionNiveauDiplome"; 
+            LANGUAGE = Java; 
+            OUTLETS = {
+                bAnnuler = id; 
+                bValider = id; 
+                comboParcours = id; 
+                comboSemestre = id; 
+                eodGroupeCollection = id; 
+                eodGroupeGrp = id; 
+                tableGroupeCollection = id; 
+                tableGroupeGrp = id; 
+            }; 
+            SUPERCLASS = "com.webobjects.eoapplication.EOInterfaceController"; 
+        }
+    ); 
+    IBVersion = 1; 
+}

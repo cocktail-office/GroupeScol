@@ -1,0 +1,47 @@
+{
+    attributes = (
+        {
+            columnName = "GGRP_KEY_1"; 
+            externalType = NUMBER; 
+            name = ggrpKey1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "GGRP_KEY_2"; 
+            externalType = NUMBER; 
+            name = ggrpKey2; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (ggrpKey1, ggrpKey2); 
+    className = "org.cocktail.groupescol.serveur.eof.ScolGroupeIncompatibilite"; 
+    classProperties = (scolGroupeGrp2, scolGroupeGrp1); 
+    externalName = "SCOL_GROUPE_INCOMPATIBILITE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (scolGroupeGrp1, scolGroupeGrp2); 
+        "_javaClientClassName" = "org.cocktail.groupescol.client.eof.ScolGroupeIncompatibilite"; 
+    }; 
+    name = ScolGroupeIncompatibilite; 
+    primaryKeyAttributes = (ggrpKey2, ggrpKey1); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = ScolGroupeGrp; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = ggrpKey; sourceAttribute = ggrpKey1; }); 
+            name = scolGroupeGrp1; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = ScolGroupeGrp; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = ggrpKey; sourceAttribute = ggrpKey2; }); 
+            name = scolGroupeGrp2; 
+        }
+    ); 
+}

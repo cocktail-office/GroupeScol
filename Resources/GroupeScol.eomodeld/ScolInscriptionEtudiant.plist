@@ -1,0 +1,268 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "ADR_CIVILITE"; 
+            externalType = VARCHAR2; 
+            name = adrCivilite; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ADR_NOM"; 
+            externalType = VARCHAR2; 
+            name = adrNom; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ADR_PRENOM"; 
+            externalType = VARCHAR2; 
+            name = adrPrenom; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ETUD_CODE_INE"; 
+            externalType = VARCHAR2; 
+            name = etudCodeIne; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 11; 
+        }, 
+        {
+            columnName = "ETUD_NUMERO"; 
+            externalType = NUMBER; 
+            name = etudNumero; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "FDIP_ABREVIATION"; 
+            externalType = VARCHAR2; 
+            name = fdipAbreviation; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "FGRA_CODE"; 
+            externalType = VARCHAR2; 
+            name = fgraCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            columnName = formation; 
+            definition = "fgraCode || ' ' || idiplAnneeSuivie || ' ' || fdipAbreviation || ' ' || fspnLibelle"; 
+            externalType = VARCHAR2; 
+            name = formation; 
+            valueClassName = NSString; 
+            width = 200; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "FSPN_KEY"; 
+            externalType = NUMBER; 
+            name = fspnKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "FSPN_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = fspnLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 200; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = identite; 
+            definition = "adrNom || ' ' || initcap(adrPrenom)"; 
+            externalType = VARCHAR2; 
+            name = identite; 
+            valueClassName = NSString; 
+            width = 200; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IDIPL_ANNEE_SUIVIE"; 
+            externalType = NUMBER; 
+            name = idiplAnneeSuivie; 
+            precision = 1; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "IDIPL_NUMERO"; 
+            externalType = NUMBER; 
+            name = idiplNumero; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "IDIPL_PASSAGE_CONDITIONNEL"; 
+            externalType = VARCHAR2; 
+            name = idiplPassageConditionnel; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IDIPL_TYPE_INSCRIPTION"; 
+            externalType = NUMBER; 
+            name = idiplTypeInscription; 
+            precision = 1; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        fannKey, 
+        etudNumero, 
+        idiplNumero, 
+        noIndividu, 
+        etudCodeIne, 
+        adrCivilite, 
+        adrNom, 
+        adrPrenom, 
+        fdipAbreviation, 
+        idiplAnneeSuivie, 
+        idiplTypeInscription, 
+        idiplPassageConditionnel, 
+        formation, 
+        fspnLibelle, 
+        identite, 
+        fspnKey, 
+        fgraCode
+    ); 
+    className = "org.cocktail.groupescol.serveur.eof.ScolInscriptionEtudiant"; 
+    classProperties = (
+        etudNumero, 
+        noIndividu, 
+        etudCodeIne, 
+        adrCivilite, 
+        adrNom, 
+        adrPrenom, 
+        fdipAbreviation, 
+        idiplAnneeSuivie, 
+        idiplTypeInscription, 
+        idiplPassageConditionnel, 
+        scolFormationAnnee, 
+        scolInscriptionAps, 
+        scolInscriptionGrps, 
+        formation, 
+        fspnLibelle, 
+        identite, 
+        scolFormationSpecialisation, 
+        scolInscriptionSemestres, 
+        fgraCode
+    ); 
+    externalName = "SCOL_INSCRIPTION_ETUDIANT"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            etudNumero, 
+            noIndividu, 
+            etudCodeIne, 
+            adrCivilite, 
+            adrNom, 
+            adrPrenom, 
+            fdipAbreviation, 
+            idiplAnneeSuivie, 
+            idiplTypeInscription, 
+            idiplPassageConditionnel, 
+            scolInscriptionAps, 
+            scolFormationAnnee, 
+            scolInscriptionGrps, 
+            fspnLibelle, 
+            formation, 
+            identite, 
+            scolFormationSpecialisation, 
+            scolInscriptionSemestres, 
+            fgraCode
+        ); 
+        "_javaClientClassName" = "org.cocktail.groupescol.client.eof.ScolInscriptionEtudiant"; 
+    }; 
+    name = ScolInscriptionEtudiant; 
+    primaryKeyAttributes = (idiplNumero, fannKey); 
+    relationships = (
+        {
+            destination = ScolFormationAnnee; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fannKey; sourceAttribute = fannKey; }); 
+            name = scolFormationAnnee; 
+        }, 
+        {
+            destination = ScolFormationSpecialisation; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fspnKey; sourceAttribute = fspnKey; }); 
+            name = scolFormationSpecialisation; 
+        }, 
+        {
+            destination = ScolInscriptionAp; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = (
+                {destinationAttribute = fannKey; sourceAttribute = fannKey; }, 
+                {destinationAttribute = idiplNumero; sourceAttribute = idiplNumero; }
+            ); 
+            name = scolInscriptionAps; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = ScolInscriptionGrp; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = (
+                {destinationAttribute = fannKey; sourceAttribute = fannKey; }, 
+                {destinationAttribute = idiplNumero; sourceAttribute = idiplNumero; }
+            ); 
+            name = scolInscriptionGrps; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
+            destination = ScolInscriptionSemestre; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = (
+                {destinationAttribute = fannKey; sourceAttribute = fannKey; }, 
+                {destinationAttribute = idiplNumero; sourceAttribute = idiplNumero; }
+            ); 
+            name = scolInscriptionSemestres; 
+        }
+    ); 
+}

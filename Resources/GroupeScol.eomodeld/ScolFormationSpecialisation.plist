@@ -1,0 +1,89 @@
+{
+    attributes = (
+        {
+            columnName = "FDIP_CODE"; 
+            externalType = VARCHAR2; 
+            name = fdipCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 7; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "FSPN_ABREVIATION"; 
+            externalType = VARCHAR2; 
+            name = fspnAbreviation; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            columnName = "FSPN_KEY"; 
+            externalType = NUMBER; 
+            name = fspnKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "FSPN_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = fspnLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 200; 
+        }
+    ); 
+    attributesUsedForLocking = (fspnKey, fdipCode, fspnLibelle, fspnAbreviation); 
+    className = "org.cocktail.groupescol.serveur.eof.ScolFormationSpecialisation"; 
+    classProperties = (
+        fspnLibelle, 
+        fspnAbreviation, 
+        scolFormationDiplome, 
+        scolFormationHabilitations, 
+        scolMaquetteParcours
+    ); 
+    externalName = "SCOL_FORMATION_SPECIALISATION"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            fspnLibelle, 
+            fspnAbreviation, 
+            scolFormationDiplome, 
+            scolFormationHabilitations, 
+            scolInscriptionEtudiants, 
+            scolMaquetteParcourss, 
+            scolMaquetteParcours
+        ); 
+        "_javaClientClassName" = "org.cocktail.groupescol.client.eof.ScolFormationSpecialisation"; 
+    }; 
+    name = ScolFormationSpecialisation; 
+    primaryKeyAttributes = (fspnKey); 
+    relationships = (
+        {
+            destination = ScolFormationDiplome; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fdipCode; sourceAttribute = fdipCode; }); 
+            name = scolFormationDiplome; 
+        }, 
+        {
+            deleteRule = EODeleteRuleDeny; 
+            destination = ScolFormationHabilitation; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fspnKey; sourceAttribute = fspnKey; }); 
+            name = scolFormationHabilitations; 
+        }, 
+        {
+            deleteRule = EODeleteRuleDeny; 
+            destination = ScolMaquetteParcours; 
+            internalInfo = {"_nameInObjectStore" = scolMaquetteParcourss; }; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fspnKey; sourceAttribute = fspnKey; }); 
+            name = scolMaquetteParcours; 
+        }
+    ); 
+}

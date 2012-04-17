@@ -1,0 +1,161 @@
+{
+    attributes = (
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "MEC_BASE"; 
+            externalType = NUMBER; 
+            name = mecBase; 
+            precision = 3; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "MEC_CODE"; 
+            externalType = VARCHAR2; 
+            name = mecCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            columnName = "MEC_HORAIRE_ETU"; 
+            externalType = NUMBER; 
+            name = mecHoraireEtu; 
+            precision = 5; 
+            scale = 2; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            columnName = "MEC_KEY"; 
+            externalType = NUMBER; 
+            name = mecKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MEC_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = mecLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MEC_LIBELLE_COURT"; 
+            externalType = VARCHAR2; 
+            name = mecLibelleCourt; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            columnName = "MEC_POINTS"; 
+            externalType = NUMBER; 
+            name = mecPoints; 
+            precision = 4; 
+            scale = 2; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MEC_SESSION1"; 
+            externalType = VARCHAR2; 
+            name = mecSession1; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MEC_SESSION2"; 
+            externalType = VARCHAR2; 
+            name = mecSession2; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        mecKey, 
+        mecCode, 
+        mecLibelle, 
+        mecLibelleCourt, 
+        mecHoraireEtu, 
+        mecPoints, 
+        mecSession1, 
+        mecSession2, 
+        mecBase, 
+        fannKey
+    ); 
+    className = "org.cocktail.groupescol.serveur.eof.ScolMaquetteEc"; 
+    classProperties = (
+        mecCode, 
+        mecLibelle, 
+        mecLibelleCourt, 
+        mecHoraireEtu, 
+        mecPoints, 
+        mecSession1, 
+        mecSession2, 
+        mecBase, 
+        scolFormationAnnee, 
+        scolMaquetteRepartitionAps, 
+        scolMaquetteRepartitionEcs
+    ); 
+    externalName = "SCOL_MAQUETTE_EC"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            mecCode, 
+            mecLibelle, 
+            mecLibelleCourt, 
+            mecHoraireEtu, 
+            mecPoints, 
+            mecSession1, 
+            mecSession2, 
+            mecBase, 
+            scolFormationAnnee, 
+            scolMaquetteRepartitionAps, 
+            scolMaquetteRepartitionEcs
+        ); 
+        "_javaClientClassName" = "org.cocktail.groupescol.client.eof.ScolMaquetteEc"; 
+    }; 
+    name = ScolMaquetteEc; 
+    primaryKeyAttributes = (mecKey); 
+    relationships = (
+        {
+            destination = ScolFormationAnnee; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fannKey; sourceAttribute = fannKey; }); 
+            name = scolFormationAnnee; 
+        }, 
+        {
+            deleteRule = EODeleteRuleDeny; 
+            destination = ScolMaquetteRepartitionAp; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mecKey; sourceAttribute = mecKey; }); 
+            name = scolMaquetteRepartitionAps; 
+        }, 
+        {
+            deleteRule = EODeleteRuleDeny; 
+            destination = ScolMaquetteRepartitionEc; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = mecKey; sourceAttribute = mecKey; }); 
+            name = scolMaquetteRepartitionEcs; 
+        }
+    ); 
+}

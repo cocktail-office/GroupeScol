@@ -1,0 +1,31 @@
+{
+    attributes = (
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "MEC_KEY"; 
+            externalType = NUMBER; 
+            name = mecKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }
+    ); 
+    attributesUsedForLocking = (mecKey, fannKey); 
+    className = "org.cocktail.groupescol.serveur.eof.ScolMaquetteEcLibre"; 
+    classProperties = (fannKey, mecKey); 
+    externalName = "SCOL_MAQUETTE_EC_LIBRE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (fannKey, mecKey); 
+        "_javaClientClassName" = "org.cocktail.groupescol.client.eof.ScolMaquetteEcLibre"; 
+    }; 
+    name = ScolMaquetteEcLibre; 
+    primaryKeyAttributes = (mecKey); 
+}

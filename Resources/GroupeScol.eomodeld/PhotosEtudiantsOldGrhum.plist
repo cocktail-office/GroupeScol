@@ -1,0 +1,48 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "DATAS_PHOTO"; 
+            externalType = BLOB; 
+            name = datasPhoto; 
+            valueClassName = NSData; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DATE_PRISE"; 
+            externalType = DATE; 
+            name = datePrise; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            precision = 8; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }
+    ); 
+    attributesUsedForLocking = (noIndividu, datePrise); 
+    className = "org.cocktail.groupescol.serveur.eof.PhotosEtudiantsOldGrhum"; 
+    classProperties = (datasPhoto, datePrise, scolInscriptionEtudiants); 
+    externalName = "GRHUM.PHOTOS_ETUDIANTS_OLD_GRHUM"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (datasPhoto, datePrise, scolInscriptionEtudiants); 
+        "_javaClientClassName" = "org.cocktail.groupescol.client.eof.PhotosEtudiantsOldGrhum"; 
+        "_nameInObjectStore" = "PHOTOS_ETUDIANTS_GRHUM@BLOBS.WORLD"; 
+    }; 
+    name = PhotosEtudiantsOldGrhum; 
+    primaryKeyAttributes = (noIndividu); 
+    relationships = (
+        {
+            destination = ScolInscriptionEtudiant; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividu; }); 
+            name = scolInscriptionEtudiants; 
+        }
+    ); 
+}

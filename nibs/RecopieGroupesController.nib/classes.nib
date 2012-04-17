@@ -1,0 +1,30 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = "javax.swing.JProgressBar"; LANGUAGE = Java; SUPERCLASS = NSView; }, 
+        {CLASS = "javax.swing.JTextArea"; LANGUAGE = Java; SUPERCLASS = NSView; }, 
+        {
+            ACTIONS = {fermer = id; rechercherDiplome = id; recopier = id; }; 
+            CLASS = "org.cocktail.groupescol.client.RecopieGroupesController"; 
+            LANGUAGE = Java; 
+            OUTLETS = {
+                bRecopier = id; 
+                comboAnneeDest = id; 
+                comboParcoursDest = id; 
+                comboParcoursSrc = id; 
+                comboSemDest = id; 
+                comboSemSrc = id; 
+                eodCollectionDest = id; 
+                eodHabilitationDest = id; 
+                progressBar = id; 
+                tDiplome = id; 
+                tGrade = id; 
+                taDiplomeSrc = id; 
+                tableCollectionDst = id; 
+                tableHabilitationDest = id; 
+            }; 
+            SUPERCLASS = "com.webobjects.eoapplication.EOInterfaceController"; 
+        }
+    ); 
+    IBVersion = 1; 
+}

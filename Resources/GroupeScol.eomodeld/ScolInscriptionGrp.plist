@@ -1,0 +1,89 @@
+{
+    attributes = (
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "GGRP_KEY"; 
+            externalType = NUMBER; 
+            name = ggrpKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "IDIPL_NUMERO"; 
+            externalType = NUMBER; 
+            name = idiplNumero; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "IGGRP_TEMOIN_SELECTION"; 
+            externalType = VARCHAR2; 
+            name = iggrpTemoinSelection; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (idiplNumero, ggrpKey, iggrpTemoinSelection, fannKey); 
+    className = "org.cocktail.groupescol.serveur.eof.ScolInscriptionGrp"; 
+    classProperties = (
+        iggrpTemoinSelection, 
+        scolFormationAnnee, 
+        scolGroupeGrp, 
+        scolInscriptionEtudiant
+    ); 
+    externalName = "SCOL_INSCRIPTION_GRP"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            iggrpTemoinSelection, 
+            scolFormationAnnee, 
+            scolGroupeGrp, 
+            scolInscriptionEtudiant, 
+            scolGroupeGrp
+        ); 
+        "_javaClientClassName" = "org.cocktail.groupescol.client.eof.ScolInscriptionGrp"; 
+    }; 
+    name = ScolInscriptionGrp; 
+    primaryKeyAttributes = (idiplNumero, ggrpKey, fannKey); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = ScolFormationAnnee; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fannKey; sourceAttribute = fannKey; }); 
+            name = scolFormationAnnee; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = ScolGroupeGrp; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = ggrpKey; sourceAttribute = ggrpKey; }); 
+            name = scolGroupeGrp; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = ScolInscriptionEtudiant; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = (
+                {destinationAttribute = idiplNumero; sourceAttribute = idiplNumero; }, 
+                {destinationAttribute = fannKey; sourceAttribute = fannKey; }
+            ); 
+            name = scolInscriptionEtudiant; 
+        }
+    ); 
+}

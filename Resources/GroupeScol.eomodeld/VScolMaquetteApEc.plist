@@ -1,0 +1,39 @@
+{
+    attributes = (
+        {
+            columnName = "MAP_KEY"; 
+            externalType = NUMBER; 
+            name = mapKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MEC_KEY"; 
+            externalType = NUMBER; 
+            name = mecKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (mapKey, mecKey); 
+    className = "org.cocktail.groupescol.serveur.eof.VScolMaquetteApEc"; 
+    classProperties = (scolMaquetteEc); 
+    externalName = "edtscol.v_scol_maquette_ap_ec"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (scolMaquetteEc); 
+        "_javaClientClassName" = "org.cocktail.groupescol.client.eof.VScolMaquetteApEc"; 
+    }; 
+    name = VScolMaquetteApEc; 
+    primaryKeyAttributes = (mapKey); 
+    relationships = (
+        {
+            destination = ScolMaquetteEc; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mecKey; sourceAttribute = mecKey; }); 
+            name = scolMaquetteEc; 
+        }
+    ); 
+}

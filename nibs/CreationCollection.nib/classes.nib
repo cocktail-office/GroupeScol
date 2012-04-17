@@ -1,0 +1,29 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {annuler = id; creerCollection = id; }; 
+            CLASS = "org.cocktail.groupescol.client.CreationCollection"; 
+            LANGUAGE = Java; 
+            OUTLETS = {
+                bAnnuler = id; 
+                bCreer = id; 
+                cBoquante = id; 
+                lDebutVal = id; 
+                lLibelleCol = id; 
+                lNbGrp = id; 
+                lPrefixGrp = id; 
+                tCapa = id; 
+                tCapaInt = id; 
+                tDebutVal = id; 
+                tFinVal = id; 
+                tInfos = id; 
+                tLibelleCol = id; 
+                tNbGrp = id; 
+                tPrefixGrp = id; 
+            }; 
+            SUPERCLASS = "com.webobjects.eoapplication.EOInterfaceController"; 
+        }
+    ); 
+    IBVersion = 1; 
+}

@@ -1,0 +1,47 @@
+{
+    attributes = (
+        {
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "PERS_ID"; 
+            externalType = NUMBER; 
+            name = persId; 
+            valueClassName = NSNumber; 
+            valueType = d; 
+        }
+    ); 
+    attributesUsedForLocking = (persId, cStructure); 
+    className = "org.cocktail.groupescol.serveur.eof.RepartStructure"; 
+    classProperties = (individuUlr, cStructure, persId); 
+    externalName = "GRHUM.REPART_STRUCTURE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            dCreation, 
+            dModification, 
+            individuUlr, 
+            individuUlr, 
+            cStructure, 
+            persId, 
+            structureUlr
+        ); 
+        "_javaClientClassName" = "org.cocktail.groupescol.client.eof.RepartStructure"; 
+    }; 
+    name = RepartStructure; 
+    primaryKeyAttributes = (cStructure, persId); 
+    relationships = (
+        {
+            destination = IndividuUlr; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = persId; sourceAttribute = persId; }); 
+            name = individuUlr; 
+        }
+    ); 
+}

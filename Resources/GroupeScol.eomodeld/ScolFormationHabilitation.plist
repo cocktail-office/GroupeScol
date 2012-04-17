@@ -1,0 +1,105 @@
+{
+    attributes = (
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "FHAB_KEY"; 
+            externalType = NUMBER; 
+            name = fhabKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "FHAB_NIVEAU"; 
+            externalType = NUMBER; 
+            name = fhabNiveau; 
+            precision = 1; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "FHAB_OUVERT"; 
+            externalType = VARCHAR2; 
+            name = fhabOuvert; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "FSPN_KEY"; 
+            externalType = NUMBER; 
+            name = fspnKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }
+    ); 
+    attributesUsedForLocking = (fhabKey, fspnKey, fhabNiveau, fhabOuvert, fannKey); 
+    className = "org.cocktail.groupescol.serveur.eof.ScolFormationHabilitation"; 
+    classProperties = (
+        fhabNiveau, 
+        fhabOuvert, 
+        scolFormationAnnee, 
+        scolFormationSpecialisation, 
+        scolDroitDiplomes, 
+        fhabKey, 
+        prefScols
+    ); 
+    externalName = "SCOL_FORMATION_HABILITATION"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            fhabNiveau, 
+            fhabOuvert, 
+            scolFormationAnnee, 
+            scolFormationSpecialisation, 
+            scolDroitDiplomes, 
+            fhabKey, 
+            prefScols
+        ); 
+        "_javaClientClassName" = "org.cocktail.groupescol.client.eof.ScolFormationHabilitation"; 
+    }; 
+    name = ScolFormationHabilitation; 
+    primaryKeyAttributes = (fhabKey); 
+    relationships = (
+        {
+            destination = PrefScol; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = (
+                {destinationAttribute = fannKey; sourceAttribute = fannKey; }, 
+                {destinationAttribute = fhabKey; sourceAttribute = fhabKey; }
+            ); 
+            name = prefScols; 
+        }, 
+        {
+            deleteRule = EODeleteRuleDeny; 
+            destination = ScolDroitDiplome; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fhabKey; sourceAttribute = fhabKey; }); 
+            name = scolDroitDiplomes; 
+        }, 
+        {
+            destination = ScolFormationAnnee; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fannKey; sourceAttribute = fannKey; }); 
+            name = scolFormationAnnee; 
+        }, 
+        {
+            destination = ScolFormationSpecialisation; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fspnKey; sourceAttribute = fspnKey; }); 
+            name = scolFormationSpecialisation; 
+        }
+    ); 
+}
